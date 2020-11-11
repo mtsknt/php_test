@@ -1,0 +1,45 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  color: #333;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+}
+
+header{
+  background-color: #efefef;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  text-align: center;
+  font-size: 2.0rem;
+}
+
+.form-section{
+  max-width: 350px;
+  margin: 50px auto;
+}
+
+.form-section form{
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item{
+  width: 90vw;
+  max-width: 350px;
+  margin: 10px 0;
+}
+
+.btn{
+  width: 150px;
+}
+
+.submit{
+  align-self: flex-end;
+}
+
+.red{
+  color: red;
+}
