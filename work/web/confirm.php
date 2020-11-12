@@ -22,8 +22,16 @@ include('../app/components/shared/_header.php');
   <p class="title">お問い合わせ内容:</p>
   <p> <?= h($_SESSION['message']) ?></p>
 
-  <a href="index.php">修正</a>
-  <a href="complete.php">送信</a>
+  <div class="buttons">
+    <button type="button" class="btn submit form-item">
+      <a href="index.php" class="btn-text">修正</a>
+    </button>
+    
+    <button type="button" class="btn submit form-item">
+      <a href="complete.php" class="btn-text">送信</a>
+    </button>
+  </div>
+
 </div>
 
 <?php

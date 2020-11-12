@@ -39,6 +39,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
   }
 
   if(count($_SESSION['error']) !== 0){
+    $_SESSION['flag'] = true;
     $num = count($_SESSION['error']);
     array_unshift($_SESSION['error'], $num . ' errors containing.');
     header('Location: http://localhost:8080/index.php');
