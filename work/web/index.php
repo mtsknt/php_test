@@ -4,6 +4,12 @@ include('../app/components/shared/_header.php');
 
 $error_messages = $_SESSION['error'] ?? [];
 
+$_SESSION['subject']  = $_SESSION['subject'] ?? 'ご意見';
+$_SESSION['name']     = $_SESSION['name'] ?? '';
+$_SESSION['email']    = $_SESSION['email'] ?? '';
+$_SESSION['phone']    = $_SESSION['phone'] ?? '';
+$_SESSION['message']  = $_SESSION['message'] ?? '';
+
 ?>
 
 <section class="form-section">
@@ -17,32 +23,32 @@ $error_messages = $_SESSION['error'] ?? [];
   
   <form action="validation.php" method='post'>
     <div class="form-group">
-      <label for="subject"><span class="red">*</span>subject</label>
+      <label for="subject"><span class="red">*</span>件名</label>
       <select class="form-item" name="subject">
         <option value="ご意見">ご意見</option>
         <option value="ご感想">ご感想</option>
         <option value="その他">その他</option>
       </select>
     </div>
-    
+
     <div class="form-group">
-      <label for="name"><span class="red">*</span>name</label>
-      <input type="text" class="form-item" name="name" required>
+      <label for="name"><span class="red">*</span>名前</label>
+      <input type="text" class="form-item" name="name" placeholder="yamada taro" value="<?= $_SESSION['name'] ?>">
     </div>
 
     <div class="form-group">
-      <label for="email"><span class="red">*</span>email</label>
-      <input type="text" pattern=".+@.+\..+" class="form-item" name="email" title="xxx@xxx.xxx" required>
+      <label for="email"><span class="red">*</span>メールアドレス</label>
+      <input type="email" class="form-item" name="email" placeholder="test@example.com" value="<?= $_SESSION['email'] ?>">
     </div>
     
     <div class="form-group">
-      <label for="phoneNumber"><span class="red">*</span>phone number</label>
-      <input type="tel" pattern="[0-9]+-[0-9]+-[0-9]+" class="form-item" name="phoneNumber" title="xxx-xxx-xxx" required>
+      <label for="phoneNumber"><span class="red">*</span>電話番号</label>
+      <input type="number" class="form-item" name="phoneNumber" placeholder="09012341234" value="<?= $_SESSION['phone'] ?>">
     </div>
     
     <div class="form-group">
-      <label for="message"><span class="red">*</span>message</label>
-      <textarea class="form-item" name="message"rows="5" required></textarea>
+      <label for="message"><span class="red">*</span>お問い合わせ内容</label>
+      <textarea class="form-item" name="message"rows="5"><?= $_SESSION['message'] ?></textarea>
     </div>
 
     <button type="submit" class="btn submit form-item">送信</button>

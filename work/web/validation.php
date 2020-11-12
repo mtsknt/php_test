@@ -24,17 +24,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 
   if($_SESSION['email'] === ''){
     array_push($_SESSION['error'], 'email is empty.');
-  }
-
-  if(preg_match($_SESSION['email'], "/.+@.+\..+/i")){
+  } elseif(preg_match("/^.+@.+\..+$/i", $_SESSION['email']) !== 1){
     array_push($_SESSION['error'], 'email is invalid.');
   }
 
   if($_SESSION['phone'] === ''){
     array_push($_SESSION['error'], 'phone number is empty.');
-  }
-
-  if(preg_match($_SESSION['phone'], "/[0-9]+-[0-9]+-[0-9]+/i")){
+  } elseif(preg_match("/^[0-9]{2,4}-?[0-9]{2,4}-?[0-9]{3,4}$/i", (string)$_SESSION['phone']) !== 1){
     array_push($_SESSION['error'], 'phone number is invalid.');
   }
 
@@ -47,6 +43,6 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     array_unshift($_SESSION['error'], $num . ' errors containing.');
     header('Location: http://localhost:8080/index.php');
   } else {
-    header('Location: http://localhost:8080/formtest.php'); 
+    header('Location: http://localhost:8080/confirm.php'); 
   }
 }
