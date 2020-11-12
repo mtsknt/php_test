@@ -43,3 +43,10 @@ header{
 .red{
   color: red;
 }
+
+.error{
+  background: pink;
+  padding: 2px 15px;
+  border-radius: 6px;
+  margin-bottom: 50px;
+}

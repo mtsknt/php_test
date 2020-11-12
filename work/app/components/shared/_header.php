@@ -1,3 +1,9 @@
+<?php
+
+require('../app/helper/methods.php');
+
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -10,9 +16,5 @@
 
 <body>
   <header>
-    <p><?= 'form was sent' ?></p>
-    <a href="index.php">back</a>
+    <p>Contact</p>
   </header>
-</body>
-
-</html>
