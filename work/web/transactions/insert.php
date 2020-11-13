@@ -1,9 +1,12 @@
 <?php
 
-require('../app/helper/methods.php');
+require('../../app/helper/methods.php');
+
+if($_SESSION['notice'] !== []){
+  $_SESSION['notice'] = [];
+}
 
 try{
-
 
   $dsn = "mysql:host=mysql;dbname=skillcheck;";
   $db = new PDO(
@@ -26,21 +29,17 @@ try{
     (string)$_SESSION['phone'],
     $_SESSION['message']
   ]);
-
-  // $sql = "SELECT * FROM contacts";
-  // $stmt = $db->prepare($sql);
-  // $stmt->execute();
-  // $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
-  // var_dump($results);
   
-  header('Location: ' . $prefix . $domain . '/complete.php');
-
-} catch (PDOException $e) {
-  
-  echo 'something went wrong!     ';
-  echo $e->getMessage();
+  array_push($_SESSION['notice'], 'お問い合わせが完了しました。(DB)');
+  header('Location: ' . $prefix . $domain . '/transactions/sendmail.php');
   exit;
 
+} catch (PDOException $e) {
+
+  // echo $e->getMessage();
+  array_push($_SESSION['notice'], 'something went wrong!(DB)');
+  header('Location: ' . $prefix . $domain . '/transactions/sendmail.php');
+  exit;
 }
 
 ?>

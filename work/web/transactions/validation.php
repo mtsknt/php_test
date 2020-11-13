@@ -1,6 +1,6 @@
 <?php
 
-require('../app/helper/methods.php');
+require('../../app/helper/methods.php');
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
   
@@ -47,8 +47,9 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
     $num = count($_SESSION['error']);
     array_unshift($_SESSION['error'], $num . ' errors containing.');
     header('Location: ' . $prefix . $domain . '/index.php');
-    
+    exit;
   } else {
-    header('Location: ' . $prefix . $domain . '/confirm.php'); 
+    header('Location: ' . $prefix . $domain . '/confirm.php');
+    exit;
   }
 }

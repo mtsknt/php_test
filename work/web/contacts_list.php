@@ -38,6 +38,7 @@ include('../app/components/shared/_header.php');
 <div style="text-align:center; margin:50px 0;">
   <a href="<?= $prefix . $domain . '/index.php' ?>">top page</a>
 </div>
+
 <?php
 
 include('../app/components/shared/_footer.php');
