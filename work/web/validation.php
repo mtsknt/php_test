@@ -2,7 +2,11 @@
 
 require('../app/helper/methods.php');
 
-if($_SERVER['REQUEST_METHOD'] === 'POST'){
+if($_SERVER['REQUEST_METHOD'] === 'GET'){
+  
+  echo 'invalid access';
+
+} else {
   
   $_SESSION['subject']  = filter_input(INPUT_POST, 'subject');
   $_SESSION['name']     = trim(filter_input(INPUT_POST, 'name'));

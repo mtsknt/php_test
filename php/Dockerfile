@@ -8,7 +8,7 @@ RUN apk --update add tzdata && \
 RUN apk --update add oniguruma-dev && \
     rm -rf /var/cache/apk/*
 
-RUN docker-php-ext-install mbstring
+RUN docker-php-ext-install pdo_mysql mysqli mbstring
 
 COPY php.ini-development /usr/local/etc/php/php.ini
 

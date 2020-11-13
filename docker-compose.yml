@@ -3,9 +3,25 @@
 version: '3.7'
 services:
   php:
-    #build: ./php-fpm
+    container_name: php
     build: ./php
     ports:
-    - 8080:8000
+      - 8080:8000
     volumes:
-    - ./work:/work
+      - ./work:/work
+    depends_on: 
+      - mysql
+
+  mysql:
+    container_name: mysql
+    build: ./mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql/mysql_conf:/etc/mysql/conf.d
+      - ./mysql/storage:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=test
+      - MYSQL_PASSWORD=test
+      - MYSQL_DATABASE=test

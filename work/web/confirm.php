@@ -28,7 +28,7 @@ include('../app/components/shared/_header.php');
     </button>
     
     <button type="button" class="btn submit form-item">
-      <a href="complete.php" class="btn-text">送信</a>
+      <a href="insert.php" class="btn-text">送信</a>
     </button>
   </div>
 
