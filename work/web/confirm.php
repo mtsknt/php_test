@@ -24,11 +24,11 @@ include('../app/components/shared/_header.php');
 
   <div class="buttons">
     <button type="button" class="btn submit form-item">
-      <a href="index.php" class="btn-text">修正</a>
+      <a href="<?= $prefix . $domain . '/index.php' ?>" class="btn-text">修正</a>
     </button>
     
     <button type="button" class="btn submit form-item">
-      <a href="insert.php" class="btn-text">送信</a>
+      <a href="<?= $prefix . $domain . '/insert.php' ?>" class="btn-text">送信</a>
     </button>
   </div>
 

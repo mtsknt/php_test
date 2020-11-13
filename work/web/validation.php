@@ -46,8 +46,9 @@ if($_SERVER['REQUEST_METHOD'] === 'GET'){
     $_SESSION['flag'] = true;
     $num = count($_SESSION['error']);
     array_unshift($_SESSION['error'], $num . ' errors containing.');
-    header('Location: http://localhost:8080/index.php');
+    header('Location: ' . $prefix . $domain . '/index.php');
+    
   } else {
-    header('Location: http://localhost:8080/confirm.php'); 
+    header('Location: ' . $prefix . $domain . '/confirm.php'); 
   }
 }

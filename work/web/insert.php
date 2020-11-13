@@ -33,7 +33,7 @@ try{
   // $results = $stmt->fetchALL(PDO::FETCH_ASSOC);
   // var_dump($results);
   
-  header('Location: http://localhost:8080/complete.php');
+  header('Location: ' . $prefix . $domain . '/complete.php');
 
 } catch (PDOException $e) {
   

@@ -25,7 +25,7 @@ $message = ($flag === true) ? $_SESSION['message'] : '';
     </div>
   <?php endif; ?>
   
-  <form action="validation.php" method='post'>
+  <form action="<?= $prefix . $domain . '/validation.php' ?>" method='post'>
     <div class="form-group">
       <label for="subject"><span class="red">*</span>件名</label>
       <select class="form-item" name="subject">

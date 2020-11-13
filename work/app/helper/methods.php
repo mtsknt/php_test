@@ -6,3 +6,6 @@ function h($str)
 }
 
 session_start();
+
+$prefix = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
+$domain = $_SERVER['HTTP_HOST'];
