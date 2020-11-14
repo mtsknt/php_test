@@ -4,16 +4,19 @@ require('../../app/helper/methods.php');
 
 if($_SERVER['REQUEST_METHOD'] === 'GET'){
   
-  echo 'invalid access';
+  redirectRoot();
 
 } else {
-  
+
   $_SESSION['subject']  = filter_input(INPUT_POST, 'subject');
   $_SESSION['name']     = trim(filter_input(INPUT_POST, 'name'));
   $_SESSION['email']    = trim(filter_input(INPUT_POST, 'email'));
   $_SESSION['phone']    = trim(filter_input(INPUT_POST, 'phoneNumber'));
   $_SESSION['message']  = trim(filter_input(INPUT_POST, 'message'));
-  
+  $_SESSION['user_token'] = filter_input(INPUT_POST, 'token');
+
+  validateToken();
+
   if($_SESSION['error'] !== []){
     $_SESSION['error'] = [];
   };

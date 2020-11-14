@@ -1,4 +1,9 @@
-<?php include('../app/components/shared/_header.php'); ?>
+<?php 
+
+include('../app/components/shared/_header.php'); 
+validateToken();
+
+?>
 
 <div class="confirm-section">
   <h2>内容の確認</h2>

@@ -1,6 +1,7 @@
 <?php
 
 require('../../app/helper/methods.php');
+validateToken();
 
 if($_SESSION['notice'] !== []){
   $_SESSION['notice'] = [];

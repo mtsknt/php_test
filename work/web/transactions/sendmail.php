@@ -1,6 +1,7 @@
 <?php
 
 require('../../app/helper/methods.php');
+validateToken();
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;

@@ -2,6 +2,7 @@
 
 include('../app/components/shared/_header.php');
 require('transactions/initialize.php');
+createToken();
 
 ?>
 
@@ -13,6 +14,7 @@ require('transactions/initialize.php');
       <?php endforeach; ?>
     </div>
   <?php endif; ?>
+  <?php $_SESSION['error'] = []; ?>
   
   <form action="<?= $prefix . $domain . '/transactions/validation.php' ?>" method='post'>
     
@@ -35,7 +37,7 @@ require('transactions/initialize.php');
     <label for="message"><span class="red">*</span>お問い合わせ内容</label>
     <textarea class="form-item" name="message"rows="5"><?= h($message) ?></textarea>
 
-
+    <input type="hidden" name="token" value="<?= h($_SESSION['token']) ?>">
     <button type="submit" class="btn submit form-item">送信</button>
   </form>
 </section>
