@@ -27,4 +27,4 @@ function validateToken(){
 session_start();
 
 $prefix = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
-$domain = $_SERVER['HTTP_HOST'];
+$domain = $_SERVER['HTTP_HOST'] ?? 'exampe.com';
